@@ -1,0 +1,536 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.flight-search-container {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.trip-type {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.trip-type label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.flex-group {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button#searchFlightsBtn, #addCityBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button#searchFlightsBtn:hover, #addCityBtn:hover {
+    background-color: #185abc;
+}
+
+
+
+.package-booking-container {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.package-type {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.package-type label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.flex-group {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button#searchPackageBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#searchPackageBtn:hover {
+    background-color: #185abc;
+}
+
+.hotel-booking-form {
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#travelerDetails {
+    padding-top: 10px;
+}
+
+#searchHotelBtn {
+    padding: 12px;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchHotelBtn:hover {
+    background-color: #185abc;
+}
+
+
+/* main */
+
+/* Main container styling for shadow and padding */
+.containermain {
+  padding: 1rem;
+  margin-top: 5rem; /* Offset from the top container */
+  overflow: hidden; /* Prevent content from going out of bounds */
+}
+
+/* Style for airline logo images */
+.containermain img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .containermain {
+      margin-top: 7rem; /* Increase margin if the absolute container covers this */
+  }
+
+  .containermain .text-center {
+      text-align: center !important;
+  }
+
+  .containermain h4 {
+      font-size: 1.2rem;
+  }
+
+  /* Stack logos in a row on smaller screens */
+  .containermain .row .col-4 {
+      margin-bottom: 1rem;
+      border: none; /* Remove border-end for mobile view */
+  }
+
+  .containermain .row img {
+      max-width: 60px; /* Slightly reduce image size on small screens */
+  }
+}
+
+/* Base styles for images */
+.containermain img {
+  max-width: 100px; /* Controls the image width on all screens */
+  height: auto;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 576px) {
+  /* Adjust top and bottom margins on mobile */
+  .containermain {
+      margin-top: 527px;
+      margin-bottom: 20px;
+  }
+  
+  /* Stack images vertically with proper spacing on mobile */
+  .containermain .col-4 {
+      margin-bottom: 10px;
+  }
+  
+  /* Center text on smaller screens */
+  .containermain h4, .containermain p {
+      text-align: center;
+  }
+
+  /* Remove border on mobile for a cleaner look */
+  .containermain .border-end {
+      border: none;
+  }
+}
+
+
+.container-4{
+    width:98%;
+    margin: auto;
+}
+
+.container-span{
+    margin-top:-17px;
+}
+.wrapper {
+    background: #fff;
+    border-radius: 10px;
+    padding-left:20px;
+    padding-bottom:20px;
+    padding-top:5px;
+    padding-right:20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  }
+  header h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  header p {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  .price-input {
+    width: 100%;
+    display: flex;
+    margin-left:0;
+    margin-right:0;
+    margin-top:10px;
+    margin-bottom:0;
+  }
+  .price-input .field {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    align-items: center;
+  }
+  .field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 19px;
+    margin-left: 12px;
+    border-radius: 5px;
+    border:0px #fff solid;
+    text-align: center;
+    -moz-appearance: textfield;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .price-input .separator {
+    width: 130px;
+    display: flex;
+    font-size: 19px;
+    align-items: center;
+    justify-content: center;
+  }
+  .slider {
+    height: 5px;
+    position: relative;
+    background: #ddd;
+    border-radius: 5px
+  }
+  .slider .progress {
+    height: 100%;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background: #17a2b8;
+  }
+  .range-input {
+    position: relative;
+  }
+  .range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background: #17a2b8;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  input[type="range"]::-moz-range-thumb {
+    height: 17px;
+    width: 17px;
+    border: none;
+    border-radius: 50%;
+    background: #17a2b8;
+    pointer-events: auto;
+    -moz-appearance: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Support */
+  .support-box {
+    top: 2rem;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    display: block;
+  }
+  .b-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .b-btn.paypal i {
+    color: blue;
+  }
+  .b-btn:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .b-btn i {
+    font-size: 20px;
+    color: yellow;
+    margin-top: 2rem;
+  }
+  
+  .div-imgcall{
+    height:62vh;
+  }
+  .img-call{
+    width:30%;
+  }
+
+  .text-get{
+    width:300px;
+  }
+
+  .footer {
+    position: relative;
+    margin-top:125px; 
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .social-icon,
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+  }
+  
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  
+  .menu__link:hover {
+    opacity: 1;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+  }
+  
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+  
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+  
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+  
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
